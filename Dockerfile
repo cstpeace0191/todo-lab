@@ -24,7 +24,7 @@
 # 수정 가능한 높은 심각도의 CVE 가 있다. 또한 이미지에 포함된 npm 의 의존
 # 패키지(brace-expansion, pacote 등)에 취약점이 있어 npm 을 최신으로 올린다.
 ###################################################
-FROM node:22-slim AS base
+FROM node:25-slim AS base
 RUN npm install -g npm@latest && npm cache clean --force
 WORKDIR /usr/local/app
 
