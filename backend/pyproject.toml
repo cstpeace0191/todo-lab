@@ -17,3 +17,9 @@ line-length = 120
 
 [tool.ruff.lint]
 select = ["E", "F", "B"]   # pycodestyle · pyflakes · bugbear
+
+[tool.ruff.lint.per-file-ignores]
+"src/main.py" = ["E402"]   # mimetypes 등록 후 import (의도된 순서)
+
+[tool.coverage.run]
+omit = ["src/persistence/mysql.py"]   # MySQL 경로는 compose 통합 테스트에서 확인
